@@ -1,0 +1,2 @@
+# mutt
+Neomutt config file
