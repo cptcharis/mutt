@@ -1,0 +1,57 @@
+# Mutt configuration template
+# IMAP setting
+
+set folder = imaps://email_address@imap-mail.outlook.com:993
+set imap_user = email_address 
+set imap_pass = passwd
+set imap_check_subscribed = yes
+set imap_list_subscribed = yes
+set timeout = 15
+set mail_check = 90
+set imap_keepalive = 180
+unset imap_passive
+set imap_idle
+set from = email_address
+set realname = "your_name"
+
+# SMTP setting
+
+set smtp_url = smtp://email_address@smtp-mail.outlook.com:587
+set smtp_pass = passwd
+set ssl_starttls = yes
+
+# Mailboxes 
+
+set spoolfile = +INBOX
+mailboxes = +INBOX 
+set record = +INBOX.Sent
+set postponed = +INBOX.Drafts
+
+
+# Mail Editor
+
+set editor = vim 
+
+# Display Sidebar
+
+set sidebar_width = 20
+set sidebar_visible = yes
+
+# If hcache is a folder, Mutt will create sub cache folders for each account which may speeds things up even more
+
+set header_cache = ~/.cache/mutt
+
+# Store messages locall to speed thing up, like searching message bodies
+
+set message_cachedir = ~/.chache/mutt
+
+# Sidebar navigation
+
+bind index,pager \CP sidebar-prev                 #Ctrl-n Next Folder
+bind index,pager \CN sidebar-next                 #Ctrl-p Previous Folder
+bind index,pager \CI sidebar-open                 #Ctrl-i Open Folder
+bind index,pager \CB sidebar-toggle-visible       #Ctrl-b Toggle Sidebar
+
+# Theming
+
+source /home/charis/.config/mutt/mutt-colors-solarized-dark-256.muttrc 
